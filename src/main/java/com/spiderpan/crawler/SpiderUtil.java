@@ -1,4 +1,4 @@
-package com.spiderpan;
+package com.spiderpan.crawler;
 
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.pipeline.Pipeline;
