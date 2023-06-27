@@ -1,9 +1,9 @@
-package com.spiderpan.Bilibili;
+package com.spiderpan.crawler.Bilibili;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import com.spiderpan.SpiderUtil;
+import com.spiderpan.crawler.SpiderUtil;
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;

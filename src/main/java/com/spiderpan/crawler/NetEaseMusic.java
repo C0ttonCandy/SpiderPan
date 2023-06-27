@@ -1,14 +1,10 @@
-package com.spiderpan;
+package com.spiderpan.crawler;
 
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import us.codecraft.webmagic.*;
-import us.codecraft.webmagic.pipeline.Pipeline;
-import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.selector.Html;
 
 
 import java.io.*;

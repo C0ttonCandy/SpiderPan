@@ -1,4 +1,4 @@
-package com.spiderpan;
+package com.spiderpan.crawler;
 
 import org.apache.commons.lang3.StringUtils;
 import us.codecraft.webmagic.*;
@@ -6,7 +6,6 @@ import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
-import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 

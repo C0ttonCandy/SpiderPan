@@ -1,12 +1,10 @@
-package com.spiderpan;
+package com.spiderpan.crawler;
 
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
-import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 
 public class BianWallpaper {
