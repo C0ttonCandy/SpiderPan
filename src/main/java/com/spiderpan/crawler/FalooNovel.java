@@ -10,9 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class FalooNovel {
-    public static void start(String path,String url,int pageNum){
-        for(int i=1; i<=pageNum; i++ ){
-            String conUrl = "https://b.faloo.com/" + url +"_" + i +".html";
+    public static void start(String path,String url,int startPageNum,int finishPageNum){
+        for(int i=startPageNum+1; i<=finishPageNum+1; i++ ){
+
+            String conUrl = "https://b.faloo.com/" + url +"_"+ i +".html";
             Spider.create(new NovelProcesser())
                     .addUrl(conUrl)
                     .addPipeline(new NovelPipeline(path))
@@ -58,6 +59,7 @@ class NovelPipeline implements Pipeline{
         String content = resultItems.get("content");
         String title = resultItems.get("title");
         String ChapterName = resultItems.get("ChapterName");
+        System.out.println(ChapterName + "正在下载···");
         content = ChapterName + "\n\n" + content + "\n\n\n\n";
         SpiderUtil.byteDownload(path + title +".txt",content.getBytes(StandardCharsets.UTF_8),true);
 

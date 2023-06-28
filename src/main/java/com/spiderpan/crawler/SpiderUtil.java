@@ -32,7 +32,7 @@ public class SpiderUtil {
         inputStream.close();
         urlConnection.disconnect();//断开连接
     }
-    //不普通下载工具
+    //B站下载工具
     public static void fileDownload(String path, String u){
         Spider.create(new BiliDownloadProcessor())
                 .addUrl(u)
@@ -62,11 +62,13 @@ public class SpiderUtil {
         if(!file.getParentFile().exists())
             file.getParentFile().mkdir();
 
+
+        //  if 检测是否已存在文件，停止下载
         if (file.exists() && !inOneFile)
             return;
 
-        //  if 检测是否已存在文件，停止下载
-        System.out.println(path+"正在下载");
+
+
 
         InputStream inputStream = new ByteArrayInputStream(msg);
 

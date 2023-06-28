@@ -8,8 +8,8 @@ import org.jsoup.select.Elements;
 
 
 import java.io.*;
-
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class NetEaseMusic {
@@ -44,18 +44,22 @@ public class NetEaseMusic {
             SpiderUtil.commenDownload(path,url);
         }
     }
-    public static void SearchStart(String name,String p) throws IOException {
-        //https://music.163.com/weapi/cloudsearch/get/web?csrf_token=
-        //https://music.163.com/#/search/m/?s="+name+"&type=1
-        String searchUrl = "https://i.y.qq.com/n2/m/share/details/taoge.html?id=8660417223&hosteuin=";
-        String header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.51";
+    public static void ShareSongStart(String path, String url) throws IOException {
 
-        Document doc = Jsoup.connect(searchUrl)
-                .userAgent(header)
-                .timeout(8000)
-                .get();
-        System.out.println(doc);
+        Pattern p=Pattern.compile("id=(.*?)&userid");
+        Matcher m=p.matcher(url);
+        m.find();//这个必须加，否则空指针
+        String id = m.group(1);
+        System.out.println(id);
+        String downloadUrl="http://music.163.com/song/media/outer/url?id="+ id + ".mp3";
+        SpiderUtil.commenDownload(path + id + ".mp3",downloadUrl);
 
     }
+
+    public static void SearchStart(String path,String keyWord){
+
+    }
+
+
 }
 
